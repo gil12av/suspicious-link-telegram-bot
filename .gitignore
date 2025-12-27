@@ -1,0 +1,8 @@
+__pycache__/
+.env
+*.pyc
+venv/
+.env.*
+data/messages.jsonl
+feeds/*.txt
+feeds/*.csv
