@@ -11,6 +11,13 @@
 from __future__ import annotations
 import joblib
 from pathlib import Path
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).resolve().parent.parent))  # Add project root to path
+from ml import ml_features  # Import the ml_features module so the model can find the classes/functions it needs
+
+# Make ml_features available as a top-level module for model unpickling
+sys.modules['ml_features'] = ml_features
 
 MODEL_PATH = Path(__file__).resolve().parent / "models" / "text_clf.joblib"
 _model = None

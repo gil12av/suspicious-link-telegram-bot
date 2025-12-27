@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 
 # תגובה לפעולת /start
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("hello there! please send me the link and i will check is it safe 🔍")
+    await update.message.reply_text("Hi, I'm ClickSafe and I'm a bot whose goal is to help you prevent access to malicious websites or suspicious links. Please send me the link and I'll check for you whether it's safe or not, using the databases I have. 🔍")
 
 def fmt(value, suffix=""):
     return "Unknown" if value is None else f"{value}{suffix}"
@@ -40,7 +40,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
    logger.info(f"🔗 URLs extracted: {urls}")
 
    if not urls:
-        await update.message.reply_text("please send a valid link 💡")
+        await update.message.reply_text("something is missing, Please send a valid link 💡")
         logger.warning("⚠️ No URL found in message.")
         return
 
